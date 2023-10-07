@@ -21,6 +21,9 @@ $(MAPNAME): $(EXE) convert.zsh
 clean:
 	@rm -f *exe
 	@rm -f *sh
+$(OUT):
+	mkdir -p $@
+
 
 .PHONY: \
 	clean
