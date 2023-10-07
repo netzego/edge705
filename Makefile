@@ -27,7 +27,7 @@ clean:
 $(OUT):
 	mkdir -p $@
 
-extract: |$(OUT)
+extract: $(EXE) |$(OUT)
 	7z e -y -o$(OUT) $(EXE)
 
 .PHONY: \
