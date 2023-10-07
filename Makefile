@@ -10,7 +10,7 @@ CONVERT_SH	:= https://raw.githubusercontent.com/btittelbach/openmtbmap_openvelom
 OUT			:= out
 
 $(EXE):
-	curl -L $(URL) -o $@
+	@curl -L $(URL) -o $@
 
 convert.zsh:
 	curl -L $(CONVERT_SH) -o $@
