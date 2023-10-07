@@ -19,8 +19,10 @@ $(MAPNAME): $(EXE) convert.zsh
 	mv openvelo*.img $(STATE).gmapsupp.img
 
 clean:
-	@rm -f *exe
-	@rm -f *sh
+	@rm -fr *exe
+	@rm -fr *sh
+	@rm -fr $(OUT)
+
 $(OUT):
 	mkdir -p $@
 
