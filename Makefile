@@ -18,7 +18,8 @@ convert.zsh:
 
 $(MAPNAME): $(EXE) convert.zsh
 	zsh convert.zsh $(EXE) $(STYLE)
-	mv openmtbmap*.img $(STATE)-gmapsupp.img
+	mv open*.img $(STATE)-gmapsupp.img
+	ln $(STATE)-gmapsupp.img gmapsupp.img
 
 clean:
 	@rm -fr $(EXE)
