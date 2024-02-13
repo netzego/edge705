@@ -8,7 +8,7 @@ MAPNAME		:= gmapsupp.img
 URL			:= https://ftp5.gwdg.de/pub/misc/openstreetmap/openmtbmap/odbl/velomap/germany/$(EXE)
 CONVERT_SH	:= https://raw.githubusercontent.com/btittelbach/openmtbmap_openvelomap_linux/master/create_omtb_garmin_img.sh
 OUT			:= out
-STYLE		:= easydsh
+STYLE		:= esyvdsh
 
 $(EXE):
 	@curl -L $(URL) -o $@
