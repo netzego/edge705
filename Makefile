@@ -25,6 +25,10 @@ clean:
 	@rm -fr $(EXE)
 	@rm -fr $(CONVERT_SH)
 	@rm -fr $(OUT)
+	@rm -fr convert.zsh
+	@rm -fr OMTB_tmp
+	@rm -fr *.exe
+	@rm -fr *.img
 
 $(OUT):
 	mkdir -p $@
