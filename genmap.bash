@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# TODO
-# check parameter
-
 declare -gr EXE=$1
 declare -gr TYP=$2
 declare -gr RAM=1000M
@@ -36,7 +33,6 @@ generate_map() {
 		-jar "$MKGMAP" \
 		--description="$_desc" \
 		--family-id=42 \
-		--style=routes-bicycle \
 		--gmapsupp ${WORKDIR}/{6,7}*.img
 }
 
@@ -44,5 +40,7 @@ echo $WORKDIR
 
 extract_exe "$EXE"
 generate_map
+
+ls $WORKDIR/gmap*
 
 exit 0

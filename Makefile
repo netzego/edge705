@@ -29,7 +29,6 @@ clean:
 	@rm -fr OMTB_tmp
 	@rm -fr *.exe
 	@rm -fr *.img
-	@rm -fr *.tdb
 
 $(OUT):
 	mkdir -p $@
