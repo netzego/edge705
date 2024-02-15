@@ -1,12 +1,15 @@
 #!/bin/bash
 
-declare -gr EXE=$1
-declare -gr TYP=$2
+# TODO
+# check parameter
+
+declare -gr EXE="${1:-}"
+declare -gr TYP="${2:-}"
 declare -gr RAM=1000M
 declare -gr MKGMAP=/usr/share/java/mkgmap/mkgmap.jar
 declare -gr WORKDIR="$(mktemp --tmpdir -d "$0-XXXXXXXX")"
 
-# trap cleanup EXIT
+trap cleanup EXIT
 
 cleanup() {
 	rm -frv "$WORKDIR"
@@ -27,20 +30,21 @@ generate_map() {
 	# --family-id: integer 1..65535 (start w/ 1?)
 	declare -r _desc="netzego"
 	declare -r _fid="4242"
+	# declare -r _typ="$WORKDIR/$TYP"
+	# declare -r _typ="$(ls -1 $WORKDIR/race*.TYP)"
 
 	java \
 		-Xmx"$RAM" \
 		-jar "$MKGMAP" \
 		--description="$_desc" \
 		--family-id=42 \
-		--gmapsupp ${WORKDIR}/{6,7}*.img
+		--style-file=styles \
+		--style=test \
+		--improve-overview \
+		--gmapsupp "${WORKDIR}"/{6,7}*.img
 }
-
-echo $WORKDIR
 
 extract_exe "$EXE"
 generate_map
-
-ls $WORKDIR/gmap*
 
 exit 0
