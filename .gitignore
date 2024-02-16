@@ -1,4 +1,6 @@
 *.local
 *.exe
 *.img
+*.pbf
+*.md5
 convert.zsh
