@@ -67,7 +67,7 @@ verify() {
 # merge all subregions to one pbf file
 merge() {
 	osmium merge \
-		"${GEOF_DATADIR}/*-latest.osm.pbf" \
+		${GEOF_DATADIR}/*-latest.osm.pbf \
 		--overwrite \
 		--output "${GEOF_DATADIR}/${PBF}"
 }
