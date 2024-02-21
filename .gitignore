@@ -3,4 +3,5 @@
 *.img
 *.pbf
 *.md5
+data/
 convert.zsh
