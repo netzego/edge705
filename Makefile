@@ -98,6 +98,7 @@ clean:
 	@rm -fr 6*.pbf
 	@rm -fr areas.*
 	@rm -fr densities-out.txt
+	@rm -fr data/
 
 extract: $(EXE) |$(OUT)
 	7z e -y -o$(OUT) $(EXE)
