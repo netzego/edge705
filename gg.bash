@@ -6,9 +6,9 @@ set -o pipefail
 
 IFS=$' \n\t'
 
-declare -gr SCRIPTDIR="$(dirname "$(realpath "${BASH_ARGV0}")")"
 # declare -gr BUILDDIR="$(mktemp -d "out-XXXXXXXX")"
 
+declare -gr SCRIPTDIR="$(dirname "$(realpath "${BASH_ARGV0}")")"
 declare -gr RAM=2048M
 declare -gr MKGMAP=/usr/share/java/mkgmap/mkgmap.jar
 declare -gr MKGMAP_MAXNODES=1000000
